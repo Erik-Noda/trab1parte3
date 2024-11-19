@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Cadastro</title>
+</head>
+<body>
+
+    <h1>Página de Cadastro</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+    </nav>
+
+    <form action="cadastraCliente.php" method="POST">
+        
+        <input type="hidden" name="tipoFormulario" value="cadastroCliente">
+
+       
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            
+            <label for="nome">Nome (obrigatório):</label>
+            <input type="text" id="nome" name="nome" required minlength="2" maxlength="50" placeholder="Ex: João Silva" autofocus>
+
+            <label for="email">E-mail (obrigatório):</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="cpf">CPF (obrigatório):</label>
+            <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="123.456.789-00">
+
+            <label for="idade">Idade (apenas números, obrigatório):</label>
+            <input type="number" id="idade" name="idade" required>
+
+            <label for="telefone">Telefone (obrigatório):</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="dataNascimento">Data de nascimento (opcional):</label>
+            <input type="date" id="dataNascimento" name="dataNascimento">
+
+            <label>Sexo (opcional):</label>
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" name="sexo" value="feminino">
+            <label for="feminino">Feminino</label>
+
+            <label for="estadoCivil">Estado civil (opcional):</label>
+            <select id="estadoCivil" name="estadoCivil">
+                <option value="">Selecione</option>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="casado">Casado(a)</option>
+                <option value="divorciado">Divorciado(a)</option>
+            </select>
+
+            <label for="matricula">Matrícula (somente leitura):</label>
+            <input type="text" id="matricula" name="matricula" value="123456" readonly>
+        </fieldset>
+
+        
+        <fieldset>
+            <legend>Endereço</legend>
+
+            <label for="cep">CEP (obrigatório):</label>
+            <input type="text" id="cep" name="cep" required>
+
+            <label for="tipoLogradouro">Tipo de logradouro (obrigatório):</label>
+            <select id="tipoLogradouro" name="tipoLogradouro" required>
+                <option value="">Selecione</option>
+                <option value="rua">Rua</option>
+                <option value="avenida">Avenida</option>
+                <option value="praca">Praça</option>
+            </select>
+
+            <label for="logradouro">Logradouro (obrigatório):</label>
+            <input type="text" id="logradouro" name="logradouro" required>
+
+            <label for="bairro">Bairro (obrigatório):</label>
+            <input type="text" id="bairro" name="bairro" required>
+
+            <label for="cidade">Cidade (obrigatório):</label>
+            <input type="text" id="cidade" name="cidade" required>
+
+            <label for="estado">Estado (obrigatório):</label>
+            <input type="text" id="estado" name="estado" required>
+        </fieldset>
+
+        
+        <fieldset>
+            <legend>Informações Adicionais</legend>
+
+            <label>Interesses (opcional):</label><br>
+            <input type="checkbox" id="filmes" name="interesses[]" value="filmes">
+            <label for="filmes">Filmes</label>
+            <input type="checkbox" id="informatica" name="interesses[]" value="informatica">
+            <label for="informatica">Informática</label>
+            <input type="checkbox" id="games" name="interesses[]" value="games">
+            <label for="games">Games</label>
+            <input type="checkbox" id="livros" name="interesses[]" value="livros">
+            <label for="livros">Livros</label>
+            <input type="checkbox" id="roupas" name="interesses[]" value="roupas">
+            <label for="roupas">Roupas</label>
+            
+            <label for="infoComplementares">Informações Complementares (opcional):</label>
+            <textarea id="infoComplementares" name="infoComplementares" rows="4" placeholder="Escreva aqui..."></textarea>
+
+            <label for="anexoImagem">Anexar uma imagem (opcional):</label>
+            <input type="file" id="anexoImagem" name="anexoImagem" accept="image/*">
+        </fieldset>
+
+        <button type="submit">Enviar Cadastro</button>
+    </form>
+<!--  -->
+</body>
+</html>
